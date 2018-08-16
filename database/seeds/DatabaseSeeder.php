@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,5 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        $a = now();
+        dump($a);
+        // Model::unguard();
+        $this->call(PostSeeder::class);
+        // Model::reguard();
+        dump(now()->diffInSeconds($a));
     }
 }
